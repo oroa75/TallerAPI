@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo Google Maps</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <style>
+      /* Ajuste del tamaño del mapa */
+      #map {
+        height: 100vh;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mi Mapa con Google Maps API - UniBoyaca y Universidad Manuela Beltr&aacute;n</h1>
+    <div id="map"></div>
+    <!-- Script que inicializa el mapa -->
+    <script>
+      function initMap() {
+        const bogota = { lat: 4.711, lng: -74.0721 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: bogota,
+        });
+
+        const marker = new google.maps.Marker({
+          position: bogota,
+          map: map,
+          title: "Bogot&aacute;, Colombia",
+        });
+      }
+    </script>
+
+    <!-- Cargar la API con tu API key -->
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap">
+    </script>
+  </body>
+</html>
